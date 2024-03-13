@@ -14,7 +14,7 @@ export interface Job {
 
   export async function fetchJobs(): Promise<Job[]> {
     try {
-      const response = await fetch('jobs.json');
+      const response = await fetch('src/jobs.json');
       if (!response.ok) {
         throw new Error('Request failed with status:' + response.status);
       }

@@ -15,12 +15,16 @@ function App() {
         console.error('Error fetching data:', error)
       }
     };
-    fetchData
+    fetchData();
   }, []);
   
   return (
     <>
+    <h1>Job Chaser</h1>
     <Search jobs={jobs}/>
+    {jobs.map(job => (
+        <Card key={job.id} job={job} />
+    ))}
     </>
   )
 }
@@ -39,9 +43,27 @@ function Search({ jobs }: {jobs: Job[]}){
     })
     setFilteredJobs(filtered)
   }
+  return(
+    <>
+    <form onSubmit={handleSearch}>
+      <label>Search Jobs</label>
+      <input
+      value={searchQuery}
+      onChange={(e) => setSearchQuery(e.target.value)} 
+      type="text" id="search-input"/>
+      <button type="submit">Search</button>
+    </form>
+    </>
+  )
 }
 
-function Card(){
-
+function Card({job}: {job:Job}){
+  return(
+    <>
+    <div className="card">
+    <h1>{job.position}</h1>
+    </div>
+    </>
+  )
 }
 export default App
