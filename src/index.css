@@ -13,6 +13,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+header{
+  justify-content: center;
+  align-items: center;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -25,6 +30,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
+  justify-content: center;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
