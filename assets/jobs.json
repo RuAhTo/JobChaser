@@ -2,7 +2,7 @@
     {
       "id": 1,
       "company": "Photosnap",
-      "logo": "./assets/photosnap.svg",
+      "logo": "./images/photosnap.svg",
       "position": "Senior Frontend Developer",
       "role": "Frontend",
       "level": "Senior",
@@ -15,7 +15,7 @@
     {
       "id": 2,
       "company": "Manage",
-      "logo": "./assets/manage.svg",
+      "logo": "./images/manage.svg",
       "position": "Fullstack Developer",
       "role": "Fullstack",
       "level": "Midweight",
@@ -28,7 +28,7 @@
     {
       "id": 3,
       "company": "Account",
-      "logo": "./assets/account.svg",
+      "logo": "./images/account.svg",
       "position": "Junior Frontend Developer",
       "role": "Frontend",
       "level": "Junior",
@@ -41,7 +41,7 @@
     {
       "id": 4,
       "company": "MyHome",
-      "logo": "./assets/myhome.svg",
+      "logo": "./images/myhome.svg",
       "position": "Junior Frontend Developer",
       "role": "Frontend",
       "level": "Junior",
@@ -54,7 +54,7 @@
     {
       "id": 5,
       "company": "Loop Studios",
-      "logo": "./assets/loop-studios.svg",
+      "logo": "./images/loop-studios.svg",
       "position": "Software Engineer",
       "role": "Fullstack",
       "level": "Midweight",
@@ -67,7 +67,7 @@
     {
       "id": 6,
       "company": "FaceIt",
-      "logo": "./assets/faceit.svg",
+      "logo": "./images/faceit.svg",
       "position": "Junior Backend Developer",
       "role": "Backend",
       "level": "Junior",
@@ -80,7 +80,7 @@
     {
       "id": 7,
       "company": "Shortly",
-      "logo": "./assets/shortly.svg",
+      "logo": "./images/shortly.svg",
       "position": "Junior Developer",
       "role": "Frontend",
       "level": "Junior",
@@ -93,7 +93,7 @@
     {
       "id": 8,
       "company": "Insure",
-      "logo": "./assets/insure.svg",
+      "logo": "./images/insure.svg",
       "position": "Junior Frontend Developer",
       "role": "Frontend",
       "level": "Junior",
@@ -106,7 +106,7 @@
     {
       "id": 9,
       "company": "Eyecam Co.",
-      "logo": "./assets/eyecam-co.svg",
+      "logo": "./images/eyecam-co.svg",
       "position": "Full Stack Engineer",
       "role": "Fullstack",
       "level": "Midweight",
@@ -119,7 +119,7 @@
     {
       "id": 10,
       "company": "The Air Filter Company",
-      "logo": "./assets/the-air-filter-company.svg",
+      "logo": "./images/the-air-filter-company.svg",
       "position": "Front-end Dev",
       "role": "Frontend",
       "level": "Junior",
