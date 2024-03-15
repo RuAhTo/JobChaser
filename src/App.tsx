@@ -25,9 +25,13 @@ function App() {
 
   return (
     <>
-      <h1>Job Chaser</h1>
+      <header className='header'>
+        <h1>Job Chaser</h1>
+      </header>
       <Search jobs={jobs} onSearch={handleSearch} />
-      <JobList jobs={filteredJobs} />
+      <div className="jobs-container">
+        <JobList jobs={filteredJobs} />
+      </div>
     </>
   );
 }
@@ -52,7 +56,7 @@ function Search({ jobs, onSearch }: { jobs: Job[]; onSearch: (filteredJobs: Job[
 
   return (
     <>
-      <form onSubmit={handleSearch}>
+      <form className='search-form' onSubmit={handleSearch}>
         <label>Search Jobs</label>
         <input
           value={searchQuery}
@@ -80,9 +84,12 @@ function Card({ job }: { job: Job }) {
   return (
     <>
       <div className="card">
-        <h1>{job.position}</h1>
-        <h2>{job.company}</h2>
+        <img src={job.logo} alt={job.position} />
+        <h2>{job.position}</h2>
+        <h3>{job.company}</h3>
         <h3>{job.role}</h3>
+        <p>{job.languages}</p>
+        <p>{job.tools}</p>
       </div>
     </>
   );
