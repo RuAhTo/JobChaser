@@ -1,6 +1,7 @@
 // Search.tsx
 import React, { useState } from 'react';
 import { Job } from '../jobService';
+import styles from '../modules/buttons.module.css'
 
 interface SearchProps {
   jobs: Job[];
@@ -34,7 +35,7 @@ const Search: React.FC<SearchProps> = ({ jobs, onSearch }) => {
         type="text"
         id="search-input"
       />
-      <button type="submit">Search</button>
+      <button className={styles.submit} type="submit">Search</button>
     </form>
   );
 };
