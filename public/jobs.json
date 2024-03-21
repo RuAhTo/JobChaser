@@ -15,7 +15,7 @@
     {
       "id": 2,
       "company": "Manage",
-      "logo": "./manage.svg",
+      "logo": "./assets/manage.svg",
       "position": "Fullstack Developer",
       "role": "Fullstack",
       "level": "Midweight",
