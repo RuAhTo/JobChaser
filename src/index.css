@@ -7,3 +7,12 @@ body{
     height: 100vh;
     background-color: #ffffff;
 }
+
+.card:nth-of-type(odd) {
+    background-color: #ccd5ae;
+  }
+
+  .card:nth-of-type(even) {
+    background-color: #e9edc9;
+  }
+  

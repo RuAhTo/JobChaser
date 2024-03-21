@@ -33,18 +33,24 @@ function App() {
 
   return (
     <BrowserRouter>
-    <header className='flex justify-around items-center flex-row bg-primary'>
-      <a className='m-2 p-0 flex' href='/'><img className='m-0 p-0' src="./assets/faceit.svg" alt="" /></a>
-    <ul className='flex text-xl'>
-      {links.map((link, index) => (
-        <li key={index} className='m-4'>
-          <a href={link.url}>{link.label}</a>
-        </li>
-      ))}
+    <header className='flex justify-between items-center flex-row bg-primary'>
+      <div className='flex justify-start ml-8'>
+        <a className='m-2 p-0 flex' href='/'><img className='m-0 p-0' src="./assets/faceit.svg" alt="" /></a>
+      </div>
+      <div>
+      <ul className='flex text-xl ml-12 mr-12 items-center'>
+        {links.map((link, index) => (
+          <li key={index} className='m-4'>
+            <a href={link.url}>{link.label}</a>
+          </li>
+        ))}
       <li className='m-4'>
-        <button>Sign Out</button>
+        <div className=''>
+          <button className='border-black border rounded-lg p-2'>Sign Out</button>
+        </div>
       </li>
     </ul>
+    </div>
     </header>
       <Routes>
         <Route path='/' element={<HomePage/>}/>

@@ -9,9 +9,9 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ job }) => {
   return (
-      <div className='p-2 m-4 h-52 bg-primary flex justify-center items-center rounded-lg'>
+      <div className='card p-6 m-2 w-6/12 min-w-600 bg-primary flex rounded-lg'>
         <div className='flex items-center justify-center'>
-        <img className='m-2 p-2' src={job.logo} alt={job.position} />
+        <img className='p-1 w-40 h-38 min-w-40' src={job.logo} alt={job.position} />
         </div>
         <div className='p-2 m-2'>
         <h2 className='text-xl'>{job.position}</h2>
