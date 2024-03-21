@@ -15,4 +15,32 @@ body{
   .card:nth-of-type(even) {
     background-color: #CFCFFF;
   }
-  
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes enterLeft {
+    0% {
+      transform: translatex(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  .fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+  }
+
+  .enter-left{
+    animation-name: enterLeft;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+  }

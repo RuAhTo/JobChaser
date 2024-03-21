@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, Outlet  } from 'react-router-dom';
 import { fetchJobs, Job } from '../jobService';
 
 
@@ -43,16 +42,16 @@ function Dashboard(){
   
     return(
         <>
-            <main className='m-2 flex justify-center flex-col '>
-                <div className='p-2 flex justify-center items-center'>
-                    <h1 className='m-2 text-2xl'>Available Jobs</h1>
-                </div>
-                <div>
-                    <Search jobs={jobs} onSearch={handleSearch} />
-                </div>
-                <div className="flex justify-center items-center flex-col">
-                    <JobList jobs={filteredJobs} />
-                </div>
+            <main className='m-2 flex items-center flex-col w-screen h-screen flex-nowrap'>
+                  <div className='p-2 flex justify-center items-center'>
+                      <h1 className='m-2 text-2xl'>Available Jobs</h1>
+                  </div>
+                  <div>
+                      <Search jobs={jobs} onSearch={handleSearch} />
+                  </div>
+                  <div className="flex flex-wrap justify-center">
+                      <JobList jobs={filteredJobs} />
+                  </div>
             </main>
         </>
     )
