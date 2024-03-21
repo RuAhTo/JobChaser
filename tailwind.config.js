@@ -10,8 +10,8 @@ export default {
         sans: ['Mako', 'sans-serif'],
     },
     colors: {
-      primary: '#ccd5ae',
-      secondary: '#e9edc9',
+      primary: '#FFFFFF',
+      secondary: '#79B2BD',
       aux: '#faedcd',
       backg: '#fefae0'
     }
