@@ -1,14 +1,20 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, Outlet  } from 'react-router-dom';
 import { fetchJobs, Job } from './jobService';
 import HomePage from './routes/HomePage';
 import Dashboard from './routes/Dashboard';
-import JobPage from './routes/JobPage';
 import SignIn from './routes/SignIn';
 import SignUp from './routes/SignUp';
 import Search from './components/Search';
 import Card from './components/Card'
 import './index.css'
+
+function ProtectedRoute() {
+
+  const isAuthenticated = false
+
+  return isAuthenticated ? <Outlet/> : <Navigate to='/signin' replace></Navigate>
+}
 
 
 function App() {
@@ -32,23 +38,34 @@ function App() {
     setFilteredJobs(filteredJobs);
   };
 
+  const [links] = useState([
+    { label: 'Home', url: '/'},
+    { label: 'Sign Up', url: '/signup' },
+    { label: 'Log In', url: '/login' },
+  ]);
+
   return (
     <BrowserRouter>
     <header className='flex justify-around flex-row bg-slate-200'>
-      <img src="./assets/react.svg" alt="" />
-      <ul className='flex flex-row'>
-        <li className='m-4'>Jobs</li>
-        <li className='m-4'>Sing Up</li>
-        <li className='m-4'>Log In</li>
-        <button className='m-4'>Sign Out</button>
-      </ul>
+      <a className='m-0 p-0 flex' href='HomePage'><img className='m-0 p-0' src="./assets/react.svg" alt="" /></a>
+    <ul className='flex flex-row'>
+      {links.map((link, index) => (
+        <li key={index} className='m-4'>
+          <a href={link.url}>{link.label}</a>
+        </li>
+      ))}
+      <li className='m-4'>
+        <button>Sign Out</button>
+      </li>
+    </ul>
     </header>
       <Routes>
         <Route path='/' element={<HomePage/>}/>
-        <Route path='/jobpage' element={<JobPage/>}/>
         <Route path='/singin' element={<SignIn/>}/>
         <Route path='/signup' element={<SignUp/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/dashboard' element={<ProtectedRoute/>}>
+          <Route path='/dashboard' element={<Dashboard/>}/>
+        </Route>
         {/* <header className='header'>
           <h1>Job Chaser</h1>
         </header>
