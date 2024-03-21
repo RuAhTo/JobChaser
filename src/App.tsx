@@ -61,7 +61,7 @@ function App() {
     </header>
       <Routes>
         <Route path='/' element={<HomePage/>}/>
-        <Route path='/singin' element={<SignIn/>}/>
+        <Route path='/login' element={<SignIn/>}/>
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/dashboard' element={<ProtectedRoute/>}>
           <Route path='/dashboard' element={<Dashboard/>}/>
