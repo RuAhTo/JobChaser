@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
 import { fetchJobs, Job } from './jobService';
+import HomePage from './components/HomePage';
 import Search from './components/Search';
 import Card from './components/Card'
 import './App.css';
+
+//React Router
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -26,15 +30,18 @@ function App() {
   };
 
   return (
-    <>
-      <header className='header'>
-        <h1>Job Chaser</h1>
-      </header>
-      <Search jobs={jobs} onSearch={handleSearch} />
-      <div className="jobs-container">
-        <JobList jobs={filteredJobs} />
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<HomePage/>}/> {/* Add the HomePage component */}
+        <header className='header'>
+          <h1>Job Chaser</h1>
+        </header>
+        <Search jobs={jobs} onSearch={handleSearch} />
+        <div className="jobs-container">
+          <JobList jobs={filteredJobs} />
+        </div>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
