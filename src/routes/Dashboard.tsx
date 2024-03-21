@@ -49,7 +49,7 @@ function Dashboard(){
                   <div>
                       <Search jobs={jobs} onSearch={handleSearch} />
                   </div>
-                  <div className="flex flex-wrap justify-center">
+                  <div className="flex flex-wrap justify-center fade-in">
                       <JobList jobs={filteredJobs} />
                   </div>
             </main>

@@ -20,7 +20,7 @@ function SignUp(){
     return(
         <>
         <main className='h-200 flex justify-center'>
-            <section className='m-24 p-2 h-70 rounded-lg bg-primary flex flex-col shadow-xl'>
+            <section className='m-24 p-2 h-70 rounded-lg bg-primary flex flex-col shadow-xl fade-in'>
                 <h1 className='flex justify-center mb-6 mt-2 text-5xl' >Register an account</h1> 
                 <form className='p-12 flex flex-col items-center w-full' onSubmit={handleSubmit(onSubmit)}>
                     <div className='p-8'>

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['PTSansCaption', 'sans-serif'],
+        sans: ['Mako', 'sans-serif'],
     },
     colors: {
       primary: '#ACACEB',
