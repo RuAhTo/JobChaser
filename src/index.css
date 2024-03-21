@@ -9,10 +9,10 @@ body{
 }
 
 .card:nth-of-type(odd) {
-    background-color: rgb(128, 187, 198);
+    background-color: #ACACEB;
   }
 
   .card:nth-of-type(even) {
-    background-color: #5FA0B5;
+    background-color: #CFCFFF;
   }
   

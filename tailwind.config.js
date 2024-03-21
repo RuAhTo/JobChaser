@@ -10,10 +10,10 @@ export default {
         sans: ['Mako', 'sans-serif'],
     },
     colors: {
-      primary: '#FFFFFF',
-      secondary: '#79B2BD',
-      aux: '#faedcd',
-      backg: '#fefae0'
+      primary: '#ACACEB',
+      secondary: '#CFCFFF',
+      aux: '#D7D7D9',
+      backg: '#30303C'
     }
   },
   plugins: [],
