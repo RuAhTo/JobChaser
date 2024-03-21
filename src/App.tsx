@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { fetchJobs, Job } from './jobService';
-import HomePage from './components/HomePage';
+import HomePage from './routes/HomePage';
+import Dashboard from './routes/Dashboard';
+import JobPage from './routes/JobPage';
+import SignIn from './routes/SignIn';
+import SignUp from './routes/SignUp';
 import Search from './components/Search';
 import Card from './components/Card'
-import './App.css';
+import './index.css'
 
-//React Router
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -31,15 +34,28 @@ function App() {
 
   return (
     <BrowserRouter>
+    <header className='flex justify-around flex-row bg-slate-200'>
+      <img src="./assets/react.svg" alt="" />
+      <ul className='flex flex-row'>
+        <li className='m-4'>Jobs</li>
+        <li className='m-4'>Sing Up</li>
+        <li className='m-4'>Log In</li>
+        <button className='m-4'>Sign Out</button>
+      </ul>
+    </header>
       <Routes>
-        <Route path='/' element={<HomePage/>}/> {/* Add the HomePage component */}
-        <header className='header'>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/jobpage' element={<JobPage/>}/>
+        <Route path='/singin' element={<SignIn/>}/>
+        <Route path='/signup' element={<SignUp/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
+        {/* <header className='header'>
           <h1>Job Chaser</h1>
         </header>
         <Search jobs={jobs} onSearch={handleSearch} />
         <div className="jobs-container">
           <JobList jobs={filteredJobs} />
-        </div>
+        </div> */}
       </Routes>
     </BrowserRouter>
   );

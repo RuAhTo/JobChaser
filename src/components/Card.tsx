@@ -1,7 +1,7 @@
 // Card.tsx
 import React from 'react';
 import { Job } from '../jobService';
-import styles from '../modules/card.module.css'
+import '../index.css'
 
 interface CardProps {
   job: Job;
@@ -9,7 +9,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ job }) => {
   return (
-    <div className={styles.card}>
+    <div className=''>
       <img src={job.logo} alt={job.position} />
       <h2>{job.position}</h2>
       <h3>{job.company}</h3>
