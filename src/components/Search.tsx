@@ -1,7 +1,8 @@
 // Search.tsx
 import React, { useState } from 'react';
 import { Job } from '../jobService';
-import '../index.css'
+import styles from '../modules/buttons.module.css'
+
 interface SearchProps {
   jobs: Job[];
   onSearch: (filteredJobs: Job[]) => void;
@@ -26,15 +27,15 @@ const Search: React.FC<SearchProps> = ({ jobs, onSearch }) => {
   };
 
   return (
-    <form className='p-2 m-2 flex justify-center items-center' onSubmit={handleSearch}>
+    <form className='search-form' onSubmit={handleSearch}>
+      <label>Search Jobs</label>
       <input
-        className='border-2 border-primary rounded-lg w-52 m-2 p-1'
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         type="text"
         id="search-input"
       />
-      <button className='m-2 w-24 p-2 bg-secondary rounded-xl' type="submit">Search</button>
+      <button className={styles.submit} type="submit">Search</button>
     </form>
   );
 };
