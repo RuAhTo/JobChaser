@@ -9,11 +9,11 @@ body{
 }
 
 .card:nth-of-type(odd) {
-    background-color: #ACACEB;
+  background: linear-gradient(-90deg, rgba(207,207,255,1) 0%, rgba(172,172,235,1) 50%);
   }
 
   .card:nth-of-type(even) {
-    background-color: #CFCFFF;
+    background: radial-gradient(circle, rgba(172,172,235,1) 0%, rgb(158, 161, 227) 85%);
   }
 
   @keyframes fadeIn {
@@ -82,3 +82,9 @@ body{
   .scale-in-tl {
     animation: scale-in-tl 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
+
+textarea, input { outline: none; }
+
+header{
+  background: linear-gradient(0deg, rgba(207,207,255,1) 0%, rgba(172,172,235,1) 100%);
+}

@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom/client'
 // import { getAnalytics } from "firebase/analytics";
 import App from './App'
 import './index.css'
+import AuthProvider from './components/context/AuthContext'
+
 
 // const firebaseConfig = {
 //   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -15,9 +17,10 @@ import './index.css'
 // }
 
 // const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 
 ReactDOM.createRoot(document.getElementById('root')!).render( 
 <React.StrictMode>
-  <App/>
+  <AuthProvider>
+    <App/>
+  </AuthProvider>
 </React.StrictMode>, )
