@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Outlet  } from 'react-router-dom';
-import AuthContext from './components/context/AuthContext'
+import { AuthContext } from './components/context/AuthContext'
 
 //Routes
 import HomePage from './routes/HomePage';
@@ -14,9 +14,8 @@ import './index.css'
 
 function ProtectedRoute() {
 
-  // const authContext = useContext(AuthContext);
-
-  const isAuthenticated = true
+  const authContext = useContext(AuthContext);
+  const isAuthenticated = authContext && authContext.user !== null;
 
   return isAuthenticated ? <Outlet/> : <Navigate to='/login' replace></Navigate>
 }
@@ -26,9 +25,10 @@ function App() {
   const [links] = useState([
     { label: 'Home', url: '/'},
     { label: 'Sign Up', url: '/signup' },
-    // { label: 'Log In', url: '/login' },
+    { label: 'Log In', url: '/login' },
   ]);
 
+  
   return (
     <BrowserRouter>
     <header className='flex justify-between items-center flex-row'>
