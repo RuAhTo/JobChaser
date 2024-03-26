@@ -31,20 +31,20 @@ function App() {
 
   return (
     <BrowserRouter>
-    <header className='flex justify-between items-center flex-row bg-primary'>
+    <header className='flex justify-between items-center flex-row'>
       <div className='flex justify-start ml-8'>
         <a className='m-2 p-0 w-14 flex drop-shadow-lg' href='/'><img className='m-0 p-0' src="./assets/faceit.svg" alt="" /></a>
       </div>
       <div>
       <ul className='flex text-xl ml-12 mr-12 items-center enter-left'>
         {links.map((link, index) => (
-          <li key={index} className='m-4 drop-shadow-xl'>
+          <li key={index} className='m-4 drop-shadow-xl text-black'>
             <a href={link.url}>{link.label}</a>
           </li>
         ))}
       <li className='m-4'>
         <div className=''>
-          <button className='border-black border-2 rounded-lg p-3'>Sign Out</button>
+          <button className='border-black border-2 rounded-lg p-3 text-black'>Sign Out</button>
         </div>
       </li>
     </ul>
