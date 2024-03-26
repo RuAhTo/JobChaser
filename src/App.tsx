@@ -1,6 +1,5 @@
 import { useState, useContext } from 'react';
-import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate, Outlet  } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, Outlet, Link  } from 'react-router-dom';
 import { AuthContext } from './components/context/AuthContext'
 import { signOut } from 'firebase/auth';
 import { auth } from "./fireBase";
@@ -42,6 +41,9 @@ function App() {
     })
   }
 
+  const authContext = useContext(AuthContext);
+  const isAuthenticated = authContext && authContext.user !== null;
+
   return (
     <BrowserRouter>
     <header className='flex justify-between items-center flex-row'>
@@ -50,17 +52,23 @@ function App() {
       </div>
       <div>
       <ul className='flex text-xl ml-12 mr-12 items-center enter-left'>
-        {links.map((link, index) => (
-          <li key={index} className='m-4 drop-shadow-xl text-black'>
-            <a href={link.url}>{link.label}</a>
-          </li>
-        ))}
-      <li className='m-4'>
-        <div className=''>
-          <button onClick={handleSignOut} className='border-black border-2 rounded-lg p-3 text-black'>Sign Out</button>
-        </div>
-      </li>
-    </ul>
+            {isAuthenticated ? (
+              <>
+                <li className='m-4 drop-shadow-xl text-black'>
+                  <Link to='/dashboard'>Dashboard</Link>
+                </li>
+                <li className='m-4 drop-shadow-xl text-black'>
+                  <button onClick={handleSignOut} className='border-black border-2 rounded-lg p-3 text-black'>Sign Out</button>
+                </li>
+              </>
+            ) : (
+              links.map((link, index) => (
+                <li key={index} className='m-4 drop-shadow-xl text-black'>
+                  <Link to={link.url}>{link.label}</Link>
+                </li>
+              ))
+            )}
+          </ul>
     </div>
     </header>
 
