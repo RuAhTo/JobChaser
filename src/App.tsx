@@ -1,12 +1,14 @@
 import { useState, useContext } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Outlet  } from 'react-router-dom';
 import { AuthContext } from './components/context/AuthContext'
+import { signOut } from 'firebase/auth';
+import { auth } from "./fireBase";
 
 //Routes
 import HomePage from './routes/HomePage';
 import Dashboard from './routes/Dashboard';
 import SignUp from './routes/SignUp';
-// import LogIn from './routes/LogIn';
+import LogIn from './routes/LogIn';
 
 //CSS
 import './index.css'
@@ -16,6 +18,7 @@ function ProtectedRoute() {
 
   const authContext = useContext(AuthContext);
   const isAuthenticated = authContext && authContext.user !== null;
+  console.log('isAuthenticated', isAuthenticated)
 
   return isAuthenticated ? <Outlet/> : <Navigate to='/login' replace></Navigate>
 }
@@ -27,8 +30,17 @@ function App() {
     { label: 'Sign Up', url: '/signup' },
     { label: 'Log In', url: '/login' },
   ]);
-
   
+  const handleSignOut = (): void => { // Add return type annotation
+    signOut(auth)
+    .then(() => {
+      console.log('User signed out successfully')
+    })
+    .catch((error) => {
+      console.error('Error signing out:', error)
+    })
+  }
+
   return (
     <BrowserRouter>
     <header className='flex justify-between items-center flex-row'>
@@ -44,15 +56,16 @@ function App() {
         ))}
       <li className='m-4'>
         <div className=''>
-          <button className='border-black border-2 rounded-lg p-3 text-black'>Sign Out</button>
+          <button onClick={handleSignOut} className='border-black border-2 rounded-lg p-3 text-black'>Sign Out</button>
         </div>
       </li>
     </ul>
     </div>
     </header>
+
       <Routes>
         <Route path='/' element={<HomePage/>}/>
-        {/* <Route path='/login' element={<LogIn/>}/> */}
+        <Route path='/login' element={<LogIn/>}/>
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/dashboard' element={<ProtectedRoute/>}>
           <Route path='/dashboard' element={<Dashboard/>}/>

@@ -1,3 +1,4 @@
+import SignUpForm from '../components/SignUpForm';
 import '../index.css'
 import {useForm, SubmitHandler } from 'react-hook-form'
 
@@ -19,8 +20,10 @@ function SignUp(){
 
     return(
         <>
-        <main className='h-200 flex justify-center'>
-            <section className='reg-card m-24 p-2 h-70 rounded-lg bg-primary flex flex-col shadow-xl fade-in'>
+        <main className='h-200 flex justify-center flex-col '>
+            <h1 className='m-2 flex justify-center text-3xl'>Available Jobs</h1>
+            <SignUpForm/>
+            {/* <section className='reg-card m-24 p-2 h-70 rounded-lg bg-primary flex flex-col shadow-xl fade-in'>
                 <h1 className='flex justify-center mb-4 mt-4 mr-4 ml-4 text-5xl' >Register an account</h1> 
                 <form className='p-12 flex flex-col items-center w-full' onSubmit={handleSubmit(onSubmit)}>
                     <div className=''>
@@ -48,7 +51,7 @@ function SignUp(){
                         {errors.email && errors.password && <span className='italic'>You need to fill out all fields</span>}
                     </div>
                 </form>
-            </section>
+            </section> */}
         </main>
         </>
     )
