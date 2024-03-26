@@ -26,15 +26,15 @@ const Search: React.FC<SearchProps> = ({ jobs, onSearch }) => {
   };
 
   return (
-    <form className='w-102 h-16 p-1 m-2 flex justify-center items-center border-primary border-2 rounded-3xl' onSubmit={handleSearch}>
+    <form className='w-102 h-14 p-1 m-2 flex justify-center items-center border-primary border-2 rounded-full' onSubmit={handleSearch}>
       <input
-        className=' border-primary rounded-lg w-52 m-2 p-1'
+        className=' border-primary w-52 m-2 p-1 rounded-full'
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         type="text"
         id="search-input"
       />
-      <button className='m-2 p-1 bg-secondary rounded-3xl flex justify-center items-center' type="submit"><img className='w-5 m-2' src="./assets/magnifying-glass.png" alt="magnifying glass" /></button>
+      <button className=' p-1 bg-secondary rounded-full flex justify-center items-center' type="submit"><img className='w-5 m-2' src="./assets/magnifying-glass.png" alt="magnifying glass" /></button>
     </form>
   );
 };
