@@ -84,3 +84,6 @@ body{
   }
 
 textarea, input { outline: none; }
+
+header{
+  background: linear-gradient(180deg, rgba(111,111,203,1) 0%, rgba(207,207,255,1) 100%);}
