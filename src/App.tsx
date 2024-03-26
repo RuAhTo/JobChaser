@@ -31,7 +31,7 @@ function App() {
     { label: 'Log In', url: '/login' },
   ]);
   
-  const handleSignOut = (): void => { // Add return type annotation
+  const handleSignOut = (): void => {
     signOut(auth)
     .then(() => {
       console.log('User signed out successfully')

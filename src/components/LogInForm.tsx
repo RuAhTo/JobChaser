@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./../fireBase";
 
-// Definiera typen för formSubmit-funktionen
+
 type FormData = {
     email: string;
     password: string;
@@ -16,16 +16,15 @@ function LogInForm() {
         register,
         handleSubmit,
         formState: { errors }
-    } = useForm<FormData>(); // Använd FormData-typen här
+    } = useForm<FormData>();
 
-    // Använd FormData-typen som argumenttyp för formSubmit-funktionen
     const formSubmit = (data: FormData) => {
         console.log("Form Submitted: ", data);
         const { email, password } = data;
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in
+
                 const user = userCredential.user;
                 console.log("User signed in: ", user);
                 navigate("/dashboard");
