@@ -46,9 +46,9 @@ function App() {
 
   return (
     <BrowserRouter>
-    <header className='flex justify-between items-center flex-row'>
+    <header className='flex justify-between items-center flex-row h-20 elevate'>
       <div className='flex justify-start ml-8'>
-        <a className='m-2 p-0 w-14 flex drop-shadow-lg' href='/'><img className='m-0 p-0' src="./assets/faceit.svg" alt="" /></a>
+        <a className='m-2 p-0 w-14 flex' href='/'><img className='m-0 p-0' src="./assets/faceit.svg" alt="" /></a>
       </div>
       <div>
       <ul className='flex text-xl ml-12 mr-12 items-center enter-left'>
@@ -80,6 +80,15 @@ function App() {
           <Route path='/dashboard' element={<Dashboard/>}/>
         </Route>
       </Routes>
+        <footer className='flex justify-center items-end bg-secondary h-16'>
+          <section>
+            <button><img className='w-8 m-2' src="/assets/fb_icon.svg" alt="" /></button>
+            <button><img className='w-8 m-2' src="/assets/git_icon.svg" alt="" /></button>
+            <button><img className='w-8 m-2' src="/assets/linked_icon.svg" alt="" /></button>
+            <button></button>
+            <button></button>
+          </section>
+        </footer>
     </BrowserRouter>
   );
 }
