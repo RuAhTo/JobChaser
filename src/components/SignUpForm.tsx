@@ -27,13 +27,12 @@ function SignUpForm(){
     
     return (
         <>
-            <section className='card m-24 p-12 rounded-lg bg-primary flex align-center flex-col fade-in'>
-                        <h2 className='flex justify-center mb-6 mt-2 text-5xl'>Register</h2>
-                <form className='m-2 flex justify-center flex-col text-center' onSubmit={handleSubmit(formSubmit)}>
-                    <div className='flex justify-between items-center'>
+            <section>
+                        <h2>Register</h2>
+                <form onSubmit={handleSubmit(formSubmit)}>
+                    <div>
                         <label htmlFor='email'>Email:</label>
                         <input
-                            className='p-2 m-2 rounded-md'
                             type="email"
                             id='email'
                             {...register('email', {
@@ -46,10 +45,9 @@ function SignUpForm(){
                         />
                         {errors.email?.message && <>{errors.email.message}</>}
                     </div>
-                    <div className='flex justify-between items-center'>
+                    <div>
                         <label className='' htmlFor="password">Password:</label>
                         <input 
-                        className='p-2 m-2 rounded-md'
                         type="password"
                         id='password'
                         {...register('password', {
@@ -62,10 +60,9 @@ function SignUpForm(){
                         {errors.password?.message && <>{errors.password.message}</>}
                     </div>
 
-                    <div className='mb-4 flex justify-between items-center'>
+                    <div>
                         <label className='' htmlFor="confirmPassword">Confirm Password:</label>
                         <input
-                        className='p-2 m-2 rounded-md'
                         id="confirmPassword"
                         type="password"
                         {...register("confirmPassword", {
@@ -76,8 +73,8 @@ function SignUpForm(){
                         />
                         {errors.confirmPassword?.message && <>{errors.confirmPassword.message}</>}
                     </div>
-                    <button className='w-22 bg-secondary m-2 p-4 rounded-xl text-black' type="submit">Register</button>
-                    <Link className='flex justify-center italic' to='/login'>Already have an account? Sign In</Link>
+                    <button type="submit">Register</button>
+                    <Link to='/login'>Already have an account? Sign In</Link>
                 </form>
             </section>
         </>

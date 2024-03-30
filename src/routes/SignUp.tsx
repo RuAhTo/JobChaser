@@ -1,12 +1,12 @@
 import SignUpForm from '../components/SignUpForm';
-import '../index.css'
+import '../index.sass'
 
 
 function SignUp(){
 
     return(
         <>
-        <main className='h-200 flex justify-center'>
+        <main>
             <SignUpForm/>
         </main>
         </>

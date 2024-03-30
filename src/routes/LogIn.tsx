@@ -1,4 +1,4 @@
-import '../index.css'
+import '../index.sass'
 import LogInForm from '../components/LogInForm'
 
 
@@ -6,7 +6,7 @@ function LogIn (){
 
     return(
         <>
-            <main className='h-200 flex justify-center'>
+            <main>
                 <LogInForm/>
             </main>
         </>

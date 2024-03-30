@@ -7,7 +7,7 @@ import Search from '../components/Search';
 import Card from '../components/Card'
 
 //CSS
-import '../index.css'
+import '../index.sass'
 
 function JobList({ jobs }: { jobs: Job[] }) {
     return (
@@ -42,14 +42,14 @@ function Dashboard(){
   
     return(
         <>
-            <main className='m-2 flex items-center flex-col w-screen h-screen flex-nowrap'>
-                  <div className='p-2 flex justify-center items-center'>
-                      <h1 className='m-2 text-2xl'>Available Jobs</h1>
+            <main>
+                  <div>
+                      <h1>Available Jobs</h1>
                   </div>
                   <div>
                       <Search jobs={jobs} onSearch={handleSearch} />
                   </div>
-                  <div className="flex flex-wrap justify-center fade-in">
+                  <div>
                       <JobList jobs={filteredJobs} />
                   </div>
             </main>

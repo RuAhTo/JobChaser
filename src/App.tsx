@@ -11,7 +11,7 @@ import SignUp from './routes/SignUp';
 import LogIn from './routes/LogIn';
 
 //CSS
-import './index.css'
+import './index.sass'
 
 
 function ProtectedRoute() {
@@ -46,24 +46,24 @@ function App() {
 
   return (
     <BrowserRouter>
-    <header className='flex justify-between items-center flex-row h-20 elevate'>
-      <div className='flex justify-start ml-8'>
-        <a className='m-2 p-0 w-14 flex' href='/'><img className='m-0 p-0' src="./assets/faceit.svg" alt="" /></a>
+    <header className='header-container'>
+      <div>
+        <a href='/'><img src="./assets/faceit.svg" alt="" /></a>
       </div>
       <div>
-      <ul className='flex text-xl ml-12 mr-12 items-center enter-left'>
+      <ul>
             {isAuthenticated ? (
               <>
-                <li className='m-4 drop-shadow-xl text-black'>
+                <li>
                   <Link to='/dashboard'>Dashboard</Link>
                 </li>
-                <li className='m-4 drop-shadow-xl text-black'>
-                  <button onClick={handleSignOut} className='border-black border-2 rounded-lg p-3 text-black'>Sign Out</button>
+                <li>
+                  <button onClick={handleSignOut}>Sign Out</button>
                 </li>
               </>
             ) : (
               links.map((link, index) => (
-                <li key={index} className='m-4 drop-shadow-xl text-black'>
+                <li key={index}>
                   <Link to={link.url}>{link.label}</Link>
                 </li>
               ))
@@ -80,13 +80,8 @@ function App() {
           <Route path='/dashboard' element={<Dashboard/>}/>
         </Route>
       </Routes>
-        <footer className='flex justify-center items-end bg-secondary h-16'>
+        <footer>
           <section>
-            <button><img className='w-8 m-2' src="/assets/fb_icon.svg" alt="" /></button>
-            <button><img className='w-8 m-2' src="/assets/git_icon.svg" alt="" /></button>
-            <button><img className='w-8 m-2' src="/assets/linked_icon.svg" alt="" /></button>
-            <button></button>
-            <button></button>
           </section>
         </footer>
     </BrowserRouter>

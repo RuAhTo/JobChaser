@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./../fireBase";
-
+import '../index.sass'
 
 type FormData = {
     email: string;
@@ -36,13 +36,12 @@ function LogInForm() {
 
     return (
         <>
-        <section className='card m-24 p-12 rounded-lg bg-primary flex align-center flex-col fade-in'>
-            <h2 className='flex justify-center mb-6 mt-2 text-5xl' >Log In</h2> 
-            <form className='m-2 flex justify-center flex-col text-center' onSubmit={handleSubmit(formSubmit)}>
-                <div className='flex justify-between items-center'>
+        <section>
+            <h2>Log In</h2> 
+            <form onSubmit={handleSubmit(formSubmit)}>
+                <div>
                     <label htmlFor="email">Email:</label>
                     <input
-                        className='p-2 m-2 rounded-md'
                         id="email"
                         type="email"
                         {...register("email", {
@@ -56,10 +55,9 @@ function LogInForm() {
                     {errors.email?.message && <>{errors.email.message}</>}
                 </div>
 
-                <div className="mb-4 flex justify-between items-center">
+                <div>
                     <label htmlFor="password">Password:</label>
                     <input
-                    className='p-2 m-2 rounded-md'
                         id="password"
                         type="password"
                         {...register("password", {
@@ -72,9 +70,9 @@ function LogInForm() {
                     />
                     {errors.password?.message && <>{errors.password.message}</>}
                 </div>
-                <button className='w-22 bg-secondary m-2 p-4 rounded-xl text-black' type="submit">Log in</button>
+                <button type="submit">Log in</button>
             </form>
-            <Link className="flex justify-center italic " to="/signup">Don't have an account?</Link>
+            <Link to="/signup">Don't have an account?</Link>
         </section>
         </>
     );
