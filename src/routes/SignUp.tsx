@@ -1,5 +1,5 @@
 import SignUpForm from '../components/SignUpForm';
-import '../index.sass'
+import '../scss/index.scss'
 
 
 function SignUp(){

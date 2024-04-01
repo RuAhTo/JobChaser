@@ -1,4 +1,30 @@
+.homepage-h1, p, button, img {
+  text-align: center;
+}
+
 .header-container {
-  width: min(100% - 2rem, 60rem);
-  background-color: green;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar, .nav-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+  margin: 1rem;
 }/*# sourceMappingURL=index.css.map */

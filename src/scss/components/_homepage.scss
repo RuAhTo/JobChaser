@@ -1,0 +1,13 @@
+@use 'abstracts/colors';
+
+.homepage-h1, p, button, img{
+    text-align: center
+}
+
+
+.header-container{
+    width: min(100%);
+    background-color: colors.$primary;
+    display: flex;
+    justify-content: space-between;
+}

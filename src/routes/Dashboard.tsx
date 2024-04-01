@@ -7,7 +7,7 @@ import Search from '../components/Search';
 import Card from '../components/Card'
 
 //CSS
-import '../index.sass'
+import '../scss/index.scss'
 
 function JobList({ jobs }: { jobs: Job[] }) {
     return (

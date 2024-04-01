@@ -1,7 +1,7 @@
 // Card.tsx
 import React from 'react';
 import { Job } from '../jobService';
-import '../index.sass'
+import '../scss/index.scss'
 
 interface CardProps {
   job: Job;

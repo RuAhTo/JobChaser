@@ -1,14 +1,14 @@
-import '../index.sass'
+import '../scss/index.scss'
 
 function HomePage(){
     return(
-        <main >
-            <section>
-                <h1>Your next adventure awaits!</h1>
+        <main>
+            <section className='hompage-wrapper'>
+                <h1 className='homepage-h1'>Your next adventure awaits!</h1>
                 <p>Search among thousands of jobs and find your next workplace today.</p>
-                <img alt="" />
+                <img src='/assets/undraw_referral_re_0aji.svg' alt="" />
                 <div>
-                    <a><button>Sign Up Now!</button></a>
+                    <a href="/signup"><button>Sign up today!</button></a>
                 </div>
             </section>
         </main>

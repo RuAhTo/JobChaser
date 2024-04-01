@@ -11,7 +11,7 @@ import SignUp from './routes/SignUp';
 import LogIn from './routes/LogIn';
 
 //CSS
-import './index.sass'
+import './scss/index.scss'
 
 
 function ProtectedRoute() {
@@ -47,11 +47,11 @@ function App() {
   return (
     <BrowserRouter>
     <header className='header-container'>
-      <div>
+      <div className='home-logo'>
         <a href='/'><img src="./assets/faceit.svg" alt="" /></a>
       </div>
-      <div>
-      <ul>
+      <nav className='nav-bar'>
+      <ul className='nav-list'>
             {isAuthenticated ? (
               <>
                 <li>
@@ -69,7 +69,7 @@ function App() {
               ))
             )}
           </ul>
-    </div>
+    </nav>
     </header>
 
       <Routes>
