@@ -1,0 +1,26 @@
+@use '../abstracts/index' as *;
+
+header{
+    background-color: $primary;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display:flex;
+    justify-content: space-between;
+    div {
+        margin: 1rem;
+        width: 24rem;
+    }
+    ul{
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+        align-items: center;
+        width: 20rem;
+    }
+    a {
+        text-decoration: none;
+    }
+}

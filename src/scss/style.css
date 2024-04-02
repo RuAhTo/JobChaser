@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Mako&display=swap");
+header {
+  background-color: #6f6fcb;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav div {
+  margin: 1rem;
+  width: 24rem;
+}
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  align-items: center;
+  width: 20rem;
+}
+nav a {
+  text-decoration: none;
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  font-family: "Mako";
+}/*# sourceMappingURL=style.css.map */

@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./../fireBase";
-import '../scss/index.scss'
+import '../scss/style.scss'
 
 type FormData = {
     email: string;

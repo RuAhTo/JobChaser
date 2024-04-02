@@ -1,4 +1,4 @@
-import '../scss/index.scss'
+import '../scss/style.scss'
 import LogInForm from '../components/LogInForm'
 
 

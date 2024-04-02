@@ -1,7 +1,7 @@
 // Search.tsx
 import React, { useState } from 'react';
 import { Job } from '../jobService';
-import '../scss/index.scss'
+import '../scss/style.scss'
 interface SearchProps {
   jobs: Job[];
   onSearch: (filteredJobs: Job[]) => void;

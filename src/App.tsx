@@ -11,7 +11,7 @@ import SignUp from './routes/SignUp';
 import LogIn from './routes/LogIn';
 
 //CSS
-import './scss/index.scss'
+import './scss/style.scss'
 
 
 function ProtectedRoute() {
@@ -47,29 +47,29 @@ function App() {
   return (
     <BrowserRouter>
     <header className='header-container'>
-      <div className='home-logo'>
-        <a href='/'><img src="./assets/faceit.svg" alt="" /></a>
-      </div>
       <nav className='nav-bar'>
-      <ul className='nav-list'>
-            {isAuthenticated ? (
-              <>
-                <li>
-                  <Link to='/dashboard'>Dashboard</Link>
-                </li>
-                <li>
-                  <button onClick={handleSignOut}>Sign Out</button>
-                </li>
-              </>
-            ) : (
-              links.map((link, index) => (
-                <li key={index}>
-                  <Link to={link.url}>{link.label}</Link>
-                </li>
-              ))
-            )}
+        <div className='home-logo'>
+          <a href='/'><img src="./assets/faceit.svg" alt="" /></a>
+        </div>
+          <ul className='nav-list'>
+              {isAuthenticated ? (
+                <>
+                  <li>
+                    <Link to='/dashboard'>Dashboard</Link>
+                  </li>
+                  <li>
+                    <button onClick={handleSignOut}>Sign Out</button>
+                  </li>
+                </>
+              ) : (
+                links.map((link, index) => (
+                  <li key={index}>
+                    <Link to={link.url}>{link.label}</Link>
+                  </li>
+                ))
+              )}
           </ul>
-    </nav>
+      </nav>
     </header>
 
       <Routes>

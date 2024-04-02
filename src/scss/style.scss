@@ -1,0 +1,8 @@
+@use './components/navbar';
+@use './abstracts/index' as a;
+
+:root{
+    margin: 0;
+    padding: 0;
+    font-family: a.$main-font;
+}
