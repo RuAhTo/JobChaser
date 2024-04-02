@@ -4,21 +4,25 @@ header{
     background-color: $primary;
     margin: 0;
     padding: 0;
+    height: 72px;
 }
 
 nav {
     display:flex;
     justify-content: space-between;
-    div {
-        margin: 1rem;
-        width: 24rem;
+    align-items: center;
+    img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
     }
     ul{
         display: flex;
         justify-content: space-evenly;
         list-style: none;
         align-items: center;
-        width: 20rem;
+        width: 18rem;
     }
     a {
         text-decoration: none;

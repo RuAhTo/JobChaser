@@ -1,31 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Mako&display=swap");
+:root {
+  padding: 0;
+  margin: 0;
+  font-family: "Mako";
+}
+
 header {
   background-color: #6f6fcb;
   margin: 0;
   padding: 0;
+  height: 72px;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-nav div {
-  margin: 1rem;
-  width: 24rem;
+nav img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
 }
 nav ul {
   display: flex;
   justify-content: space-evenly;
   list-style: none;
   align-items: center;
-  width: 20rem;
+  width: 18rem;
 }
 nav a {
   text-decoration: none;
 }
 
 :root {
-  margin: 0;
-  padding: 0;
   font-family: "Mako";
 }/*# sourceMappingURL=style.css.map */
